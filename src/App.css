@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  transition: all 0.5s;
+}
+
+.wave-header {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wave-header svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  z-index: 1;
+}
+
+.form-container form {
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: #ccc;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.input-container {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  gap: 10px;
+  
+}
+
+ input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin: 0 10px;
+}
+
+button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+}
+
+
+.card:hover{
+  cursor: pointer;
+  background-color: #f4f4f4;
+  box-shadow: 0 0 5px 1px #ccc;
+  img {
+    transform: scale(1.2);
+  }
+}
+
+.image-container img {
+  transition: transform 0.3s ease-in-out;
+}
+.image-container {
+  position: relative;
+  overflow: hidden;
+  margin: 1rem 2rem;
+  border-radius: 50%;
+}
+
+
+
+.pagination li p{
+  color: #000
+}
+
+
+.pagination:hover {
+  cursor: pointer;
+}
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+}
+
+.pagination .page-item .active {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #ccc;
+}
+
+/* Dark Mode */
+
+.dark-mode {
+  background-color: #1d1b1b;
+  color: #fff;
+
+}
+
+.dark-card {
+  background-color: #28282e;
+  color: #fff;
+}
+
+.dark-card:hover {
+  background-color: #000;
+  color: #fff;
+  box-shadow: 0 0 5px 1px #454545;
+}
+
+.dark-card .card-text {
+  color: #fff;
+  font-weight: 300;
+}
+
+.dark-pagination {
+  background-color: #28282e;
+}
+.dark-pagination:hover {
+  background-color: #000;
+}
+
+
+.pagination li p.dark-pagination{
+  color: #fff;
+}
+
+.pagination li p.dark-pagination{
+  color: #fff;
+}
+
+.pagination .disabled p.dark-pagination {
+  background-color: #000;
+  color: #fff;
+}
+
+.dark-mode ul li.list-group-item {
+  color: #fff;
+  background-color: #1d1b1b ;
+}
+
+.dark-mode .form-container form {
+  background-color: #28282e;
+  color: #fff;
+}
+
+.dark-mode .form-container form input , .dark-mode .form-container form .input-container input  {
+  background-color: #28282e;
+  color: #fff;
+  border: 1px solid #454545;
+}
+
+
+
+.dark-mode .image-form img {
+  filter: invert(80%);
+}
+
+
+/* User Modal Form */
+.modal {
+  position: fixed;
+  display: flex;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.4s;
+}
+
+ .user-form-container {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid #ccc;
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px;
+  transform: translate(0%,-100%);
+  transition: all 0.4s;
+  overflow-y: hidden;
+}
+
+ .user-form-container form .input-container input  {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid #454545;
+  margin-bottom: 1rem;
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: red;
+}
+
+.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.show {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(0%,0%);
+}
+
+.show .user-form-container {
+  transform: translate(0%,0%);
+}
+
+.hide .user-form-container {
+  transform: translate(0%,-100%);
+}
